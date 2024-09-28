@@ -6,13 +6,13 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #1e1e1e;
-    color: #f5f5f5;
+    font-family: 'Montserrat', sans-serif; /* Fonte moderna */
+    background-color: #1e1e1e; /* Fundo preto suave */
+    color: #f5f5f5; /* Texto principal em branco */
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Evitar scroll horizontal */
     padding: 20px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease; /* Transição suave para o fundo */
 }
 
 /* Container centralizado */
@@ -21,7 +21,7 @@ body {
     margin: 0 auto;
     padding: 0 10px;
     text-align: center;
-    overflow: visible;
+    overflow: visible; /* Garante que o conteúdo seja visível */
 }
 
 /* Estilos para a imagem do banner */
@@ -31,13 +31,13 @@ body {
     display: block;
     margin: 0 auto 30px auto;
     border-radius: 8px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Sombra moderna */
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Suaviza animação */
 }
 
 .banner-image:hover {
-    transform: scale(1.03);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7);
+    transform: scale(1.03); /* Leve aumento ao passar o mouse */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7); /* Aumenta a sombra no hover */
 }
 
 /* Caixa de ajuda lateral */
@@ -84,6 +84,22 @@ body {
     margin-bottom: 12px;
 }
 
+.help-content ol {
+    list-style: decimal inside;
+    padding-left: 20px;
+}
+
+.help-content a {
+    color: #bb86fc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.help-content a:hover {
+    color: #e0aaff;
+    text-decoration: underline;
+}
+
 /* Estilo para a seção de informações sobre o Google Drive */
 .drive-info {
     background-color: #2a2a2a;
@@ -110,17 +126,11 @@ body {
     color: #bb86fc;
 }
 
-/* Estilos dos Ícones de Ajuda e Contato */
-.icon-wrapper {
+/* Estilos do Ícone de Ajuda */
+.help-icon {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* Espaço entre os ícones */
-}
-
-.help-icon, .contact-icon {
     background-color: #bb86fc;
     color: white;
     font-size: 26px;
@@ -136,15 +146,9 @@ body {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.help-icon img, .contact-icon img {
-    width: 100%;
-    height: auto;
-    border-radius: 50%;
-}
-
-.help-icon:hover, .contact-icon:hover {
+.help-icon:hover {
     background-color: #e0aaff;
-    transform: scale(1.05);
+    transform: scale(1.05); /* Leve aumento ao passar o mouse */
 }
 
 /* Estilos do Modal de Ajuda */
@@ -155,7 +159,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo mais escuro */
     padding: 20px;
     box-sizing: border-box;
     z-index: 10;
@@ -165,12 +169,13 @@ body {
     transition: opacity 0.3s ease;
 }
 
-.help-modal .help-content {
+.help-content {
     background-color: #2a2a2a;
     padding: 25px;
     width: 320px;
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+    position: relative;
 }
 
 .help-modal .help-content h2 {
@@ -225,6 +230,7 @@ body {
     background-color: #252525;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    overflow: visible;
 }
 
 .carousel {
@@ -233,13 +239,12 @@ body {
     gap: 30px;
     justify-content: center;
     padding: 0 30px;
-    flex-wrap: wrap;
 }
 
 .carousel-item {
-    min-width: 320px;
-    max-width: 320px;
-    height: 650px;
+    min-width: 350px;  /* Aumenta o tamanho do item */
+    max-width: 350px;  /* Aumenta o tamanho do item */
+    height: 800px; /* Aumenta a altura para comportar todos os elementos */
     background: #2b2b2b;
     padding: 20px;
     border-radius: 15px;
@@ -250,17 +255,27 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.carousel-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .carousel-item img {
-    width: 100%;
-    height: auto;
+    width: 100%;  /* Mantém a largura do item */
+    height: auto; /* Proporções mantidas */
     margin-bottom: 15px;
     border-radius: 10px;
     transition: transform 0.3s ease;
 }
 
+.carousel-item img:hover {
+    transform: scale(1.05); /* Leve zoom ao passar o mouse */
+}
+
+/* Estilos dos Títulos e Textos */
 .carousel-item h3 {
     font-size: 1.3em;
     margin-bottom: 10px;
@@ -268,19 +283,35 @@ body {
     letter-spacing: 1px;
 }
 
+.carousel-item p {
+    font-size: 1em;
+    color: #aaa;
+    margin-bottom: 10px; /* Menos espaço abaixo do texto da descrição */
+}
+
+.carousel-item strong {
+    font-size: 1.1em; /* Tamanho da fonte do preço */
+    color: #f5f5f5; /* Cor do texto do preço */
+    margin-bottom: 15px; /* Espaçamento abaixo do preço */
+}
+
 /* Estilo dos Botões */
 .carousel-item button {
     padding: 12px 20px;
-    background-color: #4caf50;
+    background-color: #7b1fa2;
     color: white;
     border: none;
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
     margin-top: auto;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
     width: 90%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-item button:hover {
+    background-color: #9c27b0;
+    transform: translateY(-4px); /* Leve elevação */
 }
 
 /* Navegação do Carrossel */
@@ -306,20 +337,61 @@ body {
     color: #bb86fc;
 }
 
-/* Responsividade para dispositivos móveis */
+/* Estilos do Rodapé */
+footer {
+    background: linear-gradient(145deg, #111, #222);
+    color: #f5f5f5;
+    padding: 25px 0;
+    text-align: center;
+    font-size: 1em;
+    margin-top: 40px;
+    border-top: 1px solid #333;
+    transition: padding 0.3s ease;
+}
+
+footer:hover {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.95em;
+}
+
+/* Estilos responsivos para dispositivos móveis */
 @media (max-width: 768px) {
+    .carousel {
+        flex-direction: column; /* Exibe os itens em coluna em telas menores */
+        align-items: center; /* Centraliza os itens */
+    }
+
     .carousel-item {
-        min-width: 90%;
-        height: auto;
+        min-width: 90%; /* Ajusta a largura para ocupar mais espaço em telas menores */
+        height: auto; /* Ajusta a altura automaticamente */
+        margin-bottom: 20px; /* Adiciona espaçamento entre os itens */
+    }
+
+    .carousel-item button {
+        padding: 8px 16px;
+        font-size: 0.9em;
     }
 
     .carousel-nav button {
         font-size: 2em;
     }
 
-    .icon-wrapper {
-        bottom: 10px;
-        right: 10px;
+    .help-box {
+        width: 80%; /* Ajusta a largura da caixa de ajuda em telas menores */
+        right: 10px; /* Ajusta a posição do ícone de ajuda */
+    }
+
+    .help-icon {
+        bottom: 10px; /* Ajusta a posição do ícone de ajuda em telas menores */
+        right: 10px; /* Ajusta a posição do ícone de ajuda em telas menores */
+    }
+
+    footer {
+        font-size: 0.8em; /* Reduz o tamanho da fonte no rodapé */
     }
 }
-
