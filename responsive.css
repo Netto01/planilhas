@@ -6,13 +6,13 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif; /* Fonte moderna */
-    background-color: #1e1e1e; /* Fundo preto suave */
-    color: #f5f5f5; /* Texto principal em branco */
+    font-family: 'Montserrat', sans-serif;
+    background-color: #1e1e1e;
+    color: #f5f5f5;
     line-height: 1.6;
-    overflow-x: hidden; /* Evitar scroll horizontal */
+    overflow-x: hidden;
     padding: 20px;
-    transition: background-color 0.3s ease; /* Transição suave para o fundo */
+    transition: background-color 0.3s ease;
 }
 
 /* Container centralizado */
@@ -21,7 +21,7 @@ body {
     margin: 0 auto;
     padding: 0 10px;
     text-align: center;
-    overflow: visible; /* Garante que o conteúdo seja visível */
+    overflow: visible;
 }
 
 /* Estilos para a imagem do banner */
@@ -31,15 +31,14 @@ body {
     display: block;
     margin: 0 auto 30px auto;
     border-radius: 8px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Sombra moderna */
-    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Suaviza animação */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .banner-image:hover {
-    transform: scale(1.03); /* Leve aumento ao passar o mouse */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7); /* Aumenta a sombra no hover */
+    transform: scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7);
 }
-
 
 /* Caixa de ajuda lateral */
 .help-box {
@@ -85,22 +84,6 @@ body {
     margin-bottom: 12px;
 }
 
-.help-content ol {
-    list-style: decimal inside;
-    padding-left: 20px;
-}
-
-.help-content a {
-    color: #bb86fc;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.help-content a:hover {
-    color: #e0aaff;
-    text-decoration: underline;
-}
-
 /* Estilo para a seção de informações sobre o Google Drive */
 .drive-info {
     background-color: #2a2a2a;
@@ -127,11 +110,17 @@ body {
     color: #bb86fc;
 }
 
-/* Estilos do Ícone de Ajuda */
-.help-icon {
+/* Estilos dos Ícones de Ajuda e Contato */
+.icon-wrapper {
     position: fixed;
     bottom: 20px;
     right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaço entre os ícones */
+}
+
+.help-icon, .contact-icon {
     background-color: #bb86fc;
     color: white;
     font-size: 26px;
@@ -147,9 +136,15 @@ body {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.help-icon:hover {
+.help-icon img, .contact-icon img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.help-icon:hover, .contact-icon:hover {
     background-color: #e0aaff;
-    transform: scale(1.05); /* Leve aumento ao passar o mouse */
+    transform: scale(1.05);
 }
 
 /* Estilos do Modal de Ajuda */
@@ -160,7 +155,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo mais escuro */
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
     box-sizing: border-box;
     z-index: 10;
@@ -170,13 +165,12 @@ body {
     transition: opacity 0.3s ease;
 }
 
-.help-content {
+.help-modal .help-content {
     background-color: #2a2a2a;
     padding: 25px;
     width: 320px;
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
-    position: relative;
 }
 
 .help-modal .help-content h2 {
@@ -194,10 +188,6 @@ body {
     background-color: #1e1e1e;
     color: white;
     font-size: 1em;
-}
-
-.help-modal .help-content textarea {
-    height: 80px;
 }
 
 .help-modal .help-content button {
@@ -235,7 +225,6 @@ body {
     background-color: #252525;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-    overflow: visible;
 }
 
 .carousel {
@@ -244,12 +233,13 @@ body {
     gap: 30px;
     justify-content: center;
     padding: 0 30px;
+    flex-wrap: wrap;
 }
 
 .carousel-item {
-    min-width: 320px;  /* Mantém o tamanho do item */
+    min-width: 320px;
     max-width: 320px;
-    height: 570px; /* Mantém a altura */
+    height: 650px;
     background: #2b2b2b;
     padding: 20px;
     border-radius: 15px;
@@ -260,27 +250,17 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
-}
-
-.carousel-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
 }
 
 .carousel-item img {
-    width: 100%;  /* Mantém a largura do item */
-    height: auto; /* Proporções mantidas */
+    width: 100%;
+    height: auto;
     margin-bottom: 15px;
     border-radius: 10px;
     transition: transform 0.3s ease;
 }
 
-.carousel-item img:hover {
-    transform: scale(1.05); /* Leve zoom ao passar o mouse */
-}
-
-/* Estilos dos Títulos e Textos */
 .carousel-item h3 {
     font-size: 1.3em;
     margin-bottom: 10px;
@@ -288,29 +268,19 @@ body {
     letter-spacing: 1px;
 }
 
-.carousel-item p {
-    font-size: 1em;
-    color: #aaa;
-    margin-bottom: 15px;
-}
-
 /* Estilo dos Botões */
 .carousel-item button {
     padding: 12px 20px;
-    background-color: #7b1fa2;
+    background-color: #4caf50;
     color: white;
     border: none;
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
     margin-top: auto;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     width: 90%;
-}
-
-.carousel-item button:hover {
-    background-color: #9c27b0;
-    transform: translateY(-4px); /* Leve elevação */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 /* Navegação do Carrossel */
@@ -336,45 +306,20 @@ body {
     color: #bb86fc;
 }
 
-/* Estilos do Rodapé */
-footer {
-    background: linear-gradient(145deg, #111, #222);
-    color: #f5f5f5;
-    padding: 25px 0;
-    text-align: center;
-    font-size: 1em;
-    margin-top: 40px;
-    border-top: 1px solid #333;
-    transition: padding 0.3s ease;
-}
-
-footer:hover {
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-
-footer p {
-    margin: 0;
-    font-size: 0.95em;
-}
-
-/* Estilos responsivos para dispositivos móveis */
+/* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
     .carousel-item {
-        min-width: 160px;
-        margin: 0 15px;
-    }
-
-    .carousel-item button {
-        padding: 8px 16px;
-        font-size: 0.9em;
+        min-width: 90%;
+        height: auto;
     }
 
     .carousel-nav button {
         font-size: 2em;
     }
 
-    footer {
-        font-size: 0.8em;
+    .icon-wrapper {
+        bottom: 10px;
+        right: 10px;
     }
 }
+
