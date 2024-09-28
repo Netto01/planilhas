@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Planilhas de Avaliação Neuropsicológica</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Cabeçalho com banner -->
+  <header>
+    <div class="container">
+      <img src="images/banner.png" alt="Banner Arlindo Neto Psicólogo" class="banner-image">
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Texto explicativo sobre o correto funcionamento da tabela -->
+    <section class="drive-info">
+      <p>Para o correto funcionamento das tabelas, é necessário que elas estejam armazenadas no Google Drive. Para mais informações sobre como configurar as tabelas no Google Sheets, clique no <strong>sinal de interrogação</strong> <span style="font-size: 20px;">?</span> no canto direito da tela. Caso sua planilha não funcione, entre em contato clicando no ícone de e-mail no canto inferior direito da tela.</p>
+    </section>
+
+    <!-- Carrossel de Planilhas -->
+    <div class="carousel-container">
+      <div class="carousel">
+        <div class="carousel-item">
+          <img src="images/Wisc.png" alt="Planilha WISC" class="carousel-image">
+          <h3>Planilha WISC</h3>
+          <button>Adquirir</button>
+        </div>
+
+        <div class="carousel-item">
+          <img src="images/RAVLT.png" alt="Planilha RAVLT" class="carousel-image">
+          <h3>Planilha RAVLT</h3>
+          <p>Correção rápida com percentis e análise detalhada.</p>
+          <button>Saiba Mais</button>
+        </div>
+
+        <div class="carousel-item">
+          <img src="images/etdah.jpg" alt="Planilha ETDAH-AD" class="carousel-image">
+          <h3>Planilha ETDAH-AD</h3>
+          <p>Correção da escala de TDAH adulto com gráficos.</p>
+          <button>Saiba Mais</button>
+        </div>
+      </div>
+
+      <div class="carousel-nav">
+        <button id="prevBtn">&#10094;</button>
+        <button id="nextBtn">&#10095;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Caixa de instruções que pode ser minimizada -->
+  <div class="help-box">
+    <div class="help-toggle" id="helpToggle">?</div>
+    <div class="help-content" id="helpContent">
+      <h2>Como Colocar no Google Sheets:</h2>
+      <ol>
+        <li>Faça o download da tabela no formato Excel (.xlsx).</li>
+        <li>Acesse <a href="https://sheets.google.com" target="_blank">Google Sheets</a> e faça login com sua conta do Google.</li>
+        <li>No Google Sheets, clique em <strong>"Arquivo"</strong> > <strong>"Importar"</strong>.</li>
+        <li>Na janela que abrir, selecione a aba <strong>"Upload"</strong> e clique em <strong>"Selecionar um arquivo do dispositivo"</strong>.</li>
+        <li>Escolha o arquivo Excel que você baixou e faça o upload.</li>
+        <li>Escolha a opção <strong>"Substituir a planilha"</strong> ou <strong>"Criar uma nova planilha"</strong>, conforme sua preferência.</li>
+        <li>Aguarde o processamento e pronto! Agora você pode editar e utilizar a tabela diretamente no Google Sheets.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Ícone de ajuda e formulário de contato -->
+  <div class="help-icon" id="helpIcon">
+    <img src="images/mail (3).png" alt="Ícone de E-mail" width="50" height="50">
+  </div>
+
+  <!-- Modal para contato por e-mail -->
+  <div class="help-modal" id="helpModal">
+    <div class="help-content">
+      <span class="close-modal">&times;</span> <!-- Botão de fechar -->
+      <h2>Precisa de Ajuda?</h2>
+      <p>Digite seu nome e o nome do produto que você precisa de ajuda. Envie sua mensagem e entraremos em contato!</p>
+      <input type="text" id="userName" placeholder="Seu Nome" required>
+      <input type="text" id="productName" placeholder="Nome do Produto" required>
+      <textarea id="userMessage" placeholder="Digite sua mensagem" required></textarea>
+      <button id="sendEmailBtn">Enviar E-mail</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Planilhas de Avaliação Neuropsicológica. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="carrossel.js"></script>
+  <script src="helpbox.js"></script>
+  <script src="contactbox.js"></script>
+
+</body>
+</html>
