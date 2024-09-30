@@ -25,17 +25,21 @@ function scrollNext() {
   });
 }
 
+// Função para mover o carrossel para a posição anterior
+function scrollPrev() {
+  if (scrollAmount > 0) {
+    scrollAmount -= scrollStep;
+  } else {
+    scrollAmount = maxScroll; // Volta ao final se estiver no início
+  }
+  carousel.scrollTo({
+    top: 0,
+    left: scrollAmount,
+    behavior: 'smooth'
+  });
+}
+
 // Adiciona eventos de clique nos botões de navegação
 nextButton.addEventListener('click', scrollNext);
 prevButton.addEventListener('click', scrollPrev);
 
-// Scroll automático
-let autoScroll = setInterval(scrollNext, autoScrollInterval);
-
-// Pausar o scroll automático ao passar o mouse sobre o carrossel
-carousel.addEventListener('mouseenter', () => clearInterval(autoScroll));
-
-// Reiniciar o scroll automático ao remover o mouse do carrossel
-carousel.addEventListener('mouseleave', () => {
-  autoScroll = setInterval(scrollNext, autoScrollInterval);
-});
