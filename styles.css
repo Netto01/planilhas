@@ -6,13 +6,13 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif; /* Fonte moderna */
-    background-color: #1e1e1e; /* Fundo preto suave */
-    color: #f5f5f5; /* Texto principal em branco */
+    font-family: 'Montserrat', sans-serif;
+    background-color: #1e1e1e;
+    color: #f5f5f5;
     line-height: 1.6;
-    overflow-x: hidden; /* Evitar scroll horizontal */
+    overflow-x: hidden;
     padding: 20px;
-    transition: background-color 0.3s ease; /* Transição suave para o fundo */
+    transition: background-color 0.3s ease;
 }
 
 /* Container centralizado */
@@ -21,7 +21,7 @@ body {
     margin: 0 auto;
     padding: 0 10px;
     text-align: center;
-    overflow: visible; /* Garante que o conteúdo seja visível */
+    overflow: visible;
 }
 
 /* Estilos para a imagem do banner */
@@ -31,13 +31,13 @@ body {
     display: block;
     margin: 0 auto 30px auto;
     border-radius: 8px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Sombra moderna */
-    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Suaviza animação */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .banner-image:hover {
-    transform: scale(1.03); /* Leve aumento ao passar o mouse */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7); /* Aumenta a sombra no hover */
+    transform: scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7);
 }
 
 /* Caixa de ajuda lateral */
@@ -148,7 +148,7 @@ body {
 
 .help-icon:hover {
     background-color: #e0aaff;
-    transform: scale(1.05); /* Leve aumento ao passar o mouse */
+    transform: scale(1.05);
 }
 
 /* Estilos do Modal de Ajuda */
@@ -159,7 +159,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo mais escuro */
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
     box-sizing: border-box;
     z-index: 10;
@@ -222,6 +222,58 @@ body {
     cursor: pointer;
 }
 
+/* Caixa de Pesquisa */
+.search-box {
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.search-box input {
+    width: 60%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.1em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para a mensagem de "Sem Resultados" */
+#noResultsMessage {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#noResultsMessage p {
+    font-size: 1.2em;
+    color: white;
+}
+
+#noResultsMessage p:nth-child(2) {
+    font-size: 1.1em;
+    color: whitesmoke;
+}
+
+/* Estilo para o botão de "Solicitar Minha Planilha" */
+#noResultsMessage button {
+    padding: 12px 24px;
+    font-size: 1em;
+    color: white;
+    background-color: #6200ea;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#noResultsMessage button:hover {
+    background-color: #7b1fa2;
+}
+
 /* Estilos do Carrossel */
 .carousel-container {
     position: relative;
@@ -230,21 +282,23 @@ body {
     background-color: #252525;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-    overflow: visible;
+    overflow: hidden;
 }
 
 .carousel {
     display: flex;
     transition: transform 0.5s ease-in-out;
     gap: 30px;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 0 30px;
+    scroll-behavior: smooth; /* Habilita o deslize suave */
+    overflow: hidden;
 }
 
 .carousel-item {
-    min-width: 350px;  /* Aumenta o tamanho do item */
-    max-width: 350px;  /* Aumenta o tamanho do item */
-    height: 800px; /* Aumenta a altura para comportar todos os elementos */
+    min-width: 400px;
+    max-width: 400px;
+    height: 850px;
     background: #2b2b2b;
     padding: 20px;
     border-radius: 15px;
@@ -264,38 +318,41 @@ body {
 }
 
 .carousel-item img {
-    width: 100%;  /* Mantém a largura do item */
-    height: auto; /* Proporções mantidas */
+    width: 100%;
+    height: auto;
     margin-bottom: 15px;
     border-radius: 10px;
     transition: transform 0.3s ease;
 }
 
 .carousel-item img:hover {
-    transform: scale(1.05); /* Leve zoom ao passar o mouse */
+    transform: scale(1.05);
 }
 
-/* Estilos dos Títulos e Textos */
+/* Alinhamento de texto e elementos */
 .carousel-item h3 {
     font-size: 1.3em;
     margin-bottom: 10px;
     color: #f5f5f5;
     letter-spacing: 1px;
+    min-height: 40px;
 }
 
 .carousel-item p {
     font-size: 1em;
     color: #aaa;
-    margin-bottom: 10px; /* Menos espaço abaixo do texto da descrição */
+    margin-bottom: 10px;
+    min-height: 60px;
 }
 
 .carousel-item strong {
-    font-size: 1.1em; /* Tamanho da fonte do preço */
-    color: #f5f5f5; /* Cor do texto do preço */
-    margin-bottom: 15px; /* Espaçamento abaixo do preço */
+    font-size: 1.1em;
+    color: #f5f5f5;
+    margin-bottom: 15px;
+    min-height: 40px;
 }
 
-/* Estilo dos Botões */
+/* Botões de compra */
 .carousel-item button {
     padding: 12px 20px;
     background-color: #7b1fa2;
@@ -311,7 +368,7 @@ body {
 
 .carousel-item button:hover {
     background-color: #9c27b0;
-    transform: translateY(-4px); /* Leve elevação */
+    transform: translateY(-4px);
 }
 
 /* Navegação do Carrossel */
@@ -322,19 +379,24 @@ body {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    pointer-events: none;
 }
 
 .carousel-nav button {
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.5);
     border: none;
     font-size: 3em;
     cursor: pointer;
-    color: #f5f5f5;
-    transition: color 0.3s ease;
+    color: white;
+    pointer-events: all;
+    padding: 10px 20px;
+    border-radius: 50%;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .carousel-nav button:hover {
-    color: #bb86fc;
+    background-color: rgba(187, 134, 252, 0.8);
+    color: #fff;
 }
 
 /* Estilos do Rodapé */
@@ -361,10 +423,15 @@ footer p {
 
 /* Estilos responsivos para dispositivos móveis */
 @media (max-width: 768px) {
+    .carousel {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .carousel-item {
-        min-width: 160px;
-        margin: 0 15px;
-        height: auto; /* Ajusta a altura automaticamente */
+        min-width: 90%;
+        height: auto;
+        margin-bottom: 20px;
     }
 
     .carousel-item button {
@@ -374,5 +441,19 @@ footer p {
 
     .carousel-nav button {
         font-size: 2em;
+    }
+
+    .help-box {
+        width: 80%;
+        right: 10px;
+    }
+
+    .help-icon {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    footer {
+        font-size: 0.8em;
     }
 }

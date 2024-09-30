@@ -18,14 +18,20 @@
   </header>
 
   <div class="container">
+    
     <!-- Texto explicativo sobre o correto funcionamento da tabela -->
     <section class="drive-info">
-      <p>Para o correto funcionamento das tabelas, é necessário que elas estejam armazenadas no Google Drive. Para mais informações sobre como configurar as tabelas no Google Sheets, clique no <strong>sinal de interrogação</strong> <span style="font-size: 20px;">?</span> no canto direito da tela. Caso sua planilha não funcione, entre em contato por e-mail para obter suporte.</p>
+      <p>Para o correto funcionamento das tabelas, é necessário que elas estejam armazenadas no Google Drive. Para mais informações sobre como configurar as tabelas no Google Sheets, clique no <strong>sinal de interrogação</strong> <span style="font-size: 20px;">?</span> no canto direito da tela. Caso sua planilha não funcione, entre em contato pelo e-mail: <a href="mailto:netoarlindo389@gmail.com">netoarlindo389@gmail.com </a> para obter suporte.</p>
     </section>
+
+    <!-- Barra de Pesquisa -->
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Pesquise pelo teste que procura..." onkeyup="searchTest()">
+    </div>
 
     <!-- Carrossel de Planilhas -->
     <div class="carousel-container">
-      <div class="carousel">
+      <div class="carousel" id="carouselItems">
         <div class="carousel-item">
           <img src="images/Wisc.png" alt="Planilha WISC" class="carousel-image">
           <h3>Planilha WISC</h3>
@@ -37,7 +43,7 @@
         <div class="carousel-item">
           <img src="images/RAVLT.png" alt="Planilha RAVLT" class="carousel-image">
           <h3>Planilha RAVLT</h3>
-          <p>Correção rápida com percentis e análise detalhada.</p>
+          <p>Correção rápida com percentis, análise detalhada e gráfico de desempenho.</p>
           <p><strong>Preço: R$ 59,90</strong></p>
           <a href="https://pay.kiwify.com.br/A8qEcZD" target="_blank"><button>Comprar</button></a>
         </div>
@@ -45,11 +51,36 @@
         <div class="carousel-item">
           <img src="images/ETDAH.png" alt="Planilha ETDAH-AD" class="carousel-image">
           <h3>Planilha ETDAH-AD</h3>
-          <p>Correção da escala de TDAH adulto com gráficos.</p>
+          <p>Correção da escala de TDAH.</p>
           <p><strong>Preço: R$ 49,90</strong></p>
           <a href="https://pay.kiwify.com.br/pCjVlUZ" target="_blank"><button>Comprar</button></a>
         </div>
-      </div>
+
+        <div class="carousel-item">
+          <img src="images/ETDAH-CRIAD.png" alt="Planilha ETDAH-CRIAD" class="carousel-image">
+          <h3>Planilha ETDAH-CriAd</h3>
+          <p>
+            Planilha automática para o Teste ETDAH Criança: gera percentil com precisão a partir dos dados inseridos!.</p>
+          <p><strong>Preço: R$ 49,90</strong></p>
+          <a href="https://pay.kiwify.com.br/XtMgfen" target="_blank"><button>Comprar</button></a>
+        </div>
+
+        <div class="carousel-item">
+          <img src="images/ETDAH-Pais.png" alt="Planilha ETDAH-Pais" class="carousel-image">
+          <h3>Planilha ETDAH-Pais</h3>
+          <p>Planilha automática para o Teste ETDAH-Pais: gera percentil com precisão a partir dos dados inseridos!.</p>
+          <p><strong>Preço: R$ 49,90</strong></p>
+          <a href="https://pay.kiwify.com.br/01b6l6k" target="_blank"><button>Comprar</button></a>
+        </div>
+
+     <!-- Mensagem de Sem Resultados -->
+<div id="noResultsMessage">
+  <p>Ops, não encontramos a planilha que você está procurando!</p>
+  <p>Mas não se preocupe, estamos aqui para ajudar. Envie um e-mail e solicite a criação da sua planilha personalizada!</p>
+  <a href="mailto:netoarlindo389@gmail.com" style="text-decoration: none;">
+    <button>Solicitar Minha Planilha</button>
+  </a>
+</div>
 
       <div class="carousel-nav">
         <button id="prevBtn">&#10094;</button>
@@ -81,5 +112,6 @@
 
   <script src="carrossel.js"></script>
   <script src="helpbox.js"></script>
+  <script src="searchtest.js"></script>
 </body>
 </html>

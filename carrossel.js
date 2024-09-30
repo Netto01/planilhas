@@ -1,21 +1,41 @@
-const carousel = document.querySelector('.carousel');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
+// Seleciona os elementos do DOM
+let carousel = document.querySelector('.carousel');
+let prevButton = document.querySelector('#prevBtn');
+let nextButton = document.querySelector('#nextBtn');
 
 let scrollAmount = 0;
-const scrollPerClick = 300; // Quantidade de pixels por clique
+const scrollStep = 400; // Quantidade de pixels a mover por clique
+const autoScrollInterval = 3000; // Intervalo de tempo para scroll automático (3 segundos)
 
-nextBtn.addEventListener('click', () => {
-  const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+// Define o máximo de scroll possível com base no tamanho do carrossel
+let maxScroll = carousel.scrollWidth - carousel.clientWidth;
+
+// Função para mover o carrossel para a próxima posição
+function scrollNext() {
+  maxScroll = carousel.scrollWidth - carousel.clientWidth; // Atualiza o valor máximo para scroll dinâmico
   if (scrollAmount < maxScroll) {
-    scrollAmount += scrollPerClick;
-    carousel.style.transform = `translateX(-${scrollAmount}px)`;
+    scrollAmount += scrollStep;
+  } else {
+    scrollAmount = 0; // Volta ao início se chegar ao final
   }
-});
+  carousel.scrollTo({
+    top: 0,
+    left: scrollAmount,
+    behavior: 'smooth'
+  });
+}
 
-prevBtn.addEventListener('click', () => {
-  if (scrollAmount > 0) {
-    scrollAmount -= scrollPerClick;
-    carousel.style.transform = `translateX(-${scrollAmount}px)`;
-  }
+// Adiciona eventos de clique nos botões de navegação
+nextButton.addEventListener('click', scrollNext);
+prevButton.addEventListener('click', scrollPrev);
+
+// Scroll automático
+let autoScroll = setInterval(scrollNext, autoScrollInterval);
+
+// Pausar o scroll automático ao passar o mouse sobre o carrossel
+carousel.addEventListener('mouseenter', () => clearInterval(autoScroll));
+
+// Reiniciar o scroll automático ao remover o mouse do carrossel
+carousel.addEventListener('mouseleave', () => {
+  autoScroll = setInterval(scrollNext, autoScrollInterval);
 });
