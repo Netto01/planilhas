@@ -42,4 +42,3 @@ function scrollPrev() {
 // Adiciona eventos de clique nos botões de navegação
 nextButton.addEventListener('click', scrollNext);
 prevButton.addEventListener('click', scrollPrev);
-
