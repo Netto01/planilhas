@@ -1,0 +1,123 @@
+/* Ajuste para garantir que não haja espaços desnecessários na página */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Garantir que o conteúdo da página ocupe todo o espaço disponível */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ajuste do container principal */
+#main-content {
+    flex: 1;
+}
+
+/* Estilos do Footer */
+#footer {
+    background-color: #2b2b2b;
+    color: #f2f2f2;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    margin-top: auto; /* Garante que o footer fique no final da página */
+}
+
+/* Ajuste do container do Footer */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+/* Informações de Contato no Footer */
+.footer-contact h3 {
+    color: #9c27b0; /* Cor destacada para o título */
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.footer-contact p {
+    font-size: 1em;
+    margin: 5px 0;
+}
+
+.footer-contact a {
+    color: #f2f2f2;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+    color: #7b1fa2;
+}
+
+/* Links para Redes Sociais */
+.footer-social h3 {
+    color: #ffffff;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.footer-social .social-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-social .social-links li a {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.footer-social .social-links li a img {
+    width: 30px;
+    height: 30px;
+    filter: invert(100%); /* Faz com que o ícone seja branco */
+}
+
+.footer-social .social-links li a:hover {
+    transform: scale(1.2);
+}
+
+/* Direitos Autorais */
+.footer-copyright {
+    font-size: 0.8em;
+    color: #cccccc;
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 0; /* Remove espaço extra abaixo do texto */
+}
+
+/* Responsividade do Footer */
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .footer-social, .footer-contact {
+        width: 100%;
+    }
+
+    /* Alinhamento central dos ícones no mobile */
+    .footer-social .social-links {
+        justify-content: center;
+    }
+    
+    .footer-contact p {
+        margin-bottom: 10px;
+    }
+}
