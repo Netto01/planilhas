@@ -65,7 +65,6 @@ body {
     color: #6200ea; /* Cor de destaque */
     font-weight: bold;
     letter-spacing: 1px;
-    border-radius: 10px; /* Bordas arredondadas para o título */
 }
 
 .modal-content p {
@@ -79,7 +78,7 @@ body {
     font-size: 1.1em;
     display: block;
     margin-bottom: 10px;
-    color: #fff; /* Cor branca */
+    color: white; /* Cor mais escura para melhor contraste */
     text-align: left;
 }
 
@@ -144,7 +143,8 @@ body {
 @media (max-width: 768px) {
     .modal-content {
         padding: 20px;
-        width: 90%; /* Mantém o modal centralizado com uma largura menor */
+        width: 95%; /* Mantém o modal centralizado com uma largura menor */
+        max-width: 90%; /* Reduz a largura máxima em dispositivos menores */
     }
 
     .modal-content h2 {
@@ -160,7 +160,14 @@ body {
         padding: 12px 24px;
         font-size: 1.1em;
     }
+
+    .close {
+        top: 10px;
+        right: 10px;
+        font-size: 22px; /* Diminui o tamanho do botão de fechar */
+    }
 }
+
 
 /* Container centralizado */
 .container {
