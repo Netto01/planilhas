@@ -42,3 +42,26 @@ function scrollPrev() {
 // Adiciona eventos de clique nos botões de navegação
 nextButton.addEventListener('click', scrollNext);
 prevButton.addEventListener('click', scrollPrev);
+
+// Função para abrir o modal específico
+function openModal(modalId) {
+  let modal = document.getElementById(modalId);
+  modal.style.display = "flex";
+}
+
+// Função para fechar o modal
+function closeModal(modalId) {
+  let modal = document.getElementById(modalId);
+  modal.style.display = "none";
+}
+
+// Fecha o modal se o usuário clicar fora da caixa de conteúdo
+window.onclick = function(event) {
+  let modals = document.querySelectorAll('.modal');
+  modals.forEach(modal => {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  });
+}
+
