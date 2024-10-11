@@ -143,8 +143,8 @@ body {
 @media (max-width: 768px) {
     .modal-content {
         padding: 20px;
-        width: 95%; /* Mantém o modal centralizado com uma largura menor */
-        max-width: 90%; /* Reduz a largura máxima em dispositivos menores */
+        width: 80%; /* Mantém o modal centralizado com uma largura menor */
+        max-width: 80%; /* Reduz a largura máxima em dispositivos menores */
     }
 
     .modal-content h2 {
