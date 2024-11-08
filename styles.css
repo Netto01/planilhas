@@ -15,22 +15,22 @@ body {
     transition: background-color 0.3s ease;
 }
 
-/* Modal de Boas-Vindas */
+
+/* Estilos do Modal Combo */
 .modal-gift {
     display: none; /* Oculto por padrão */
     position: fixed;
-    z-index: 100; /* Acima de todos os outros elementos */
+    z-index: 100; /* Colocado acima de outros elementos */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo escurecido e semitransparente */
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semitransparente */
     display: flex;
     justify-content: center;
     align-items: center;
     backdrop-filter: blur(4px); /* Desfoque do fundo */
     animation: fadeIn 0.5s ease; /* Animação de fade-in */
-    padding: 20px;
 }
 
 /* Animação de Fade-In */
@@ -38,6 +38,82 @@ body {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
+.modal-content {
+    background-color: #ffffff; /* Fundo branco */
+    padding: 20px;
+    border-radius: 20px; /* Bordas arredondadas */
+    width: 90%; /* Ajusta largura para dispositivos móveis */
+    max-width: 600px; /* Largura máxima do modal */
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra */
+    animation: popUp 0.4s ease; /* Efeito de "pop-up" */
+}
+
+/* Animação de Pop-Up */
+@keyframes popUp {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.modal-content img {
+    max-width: 100%; /* Garante que a imagem se ajuste ao modal */
+    height: auto;
+    border-radius: 10px; /* Bordas arredondadas para a imagem */
+    margin-bottom: 20px;
+}
+
+.modal-content .offer-button {
+    padding: 12px 20px;
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(98, 0, 234, 0.5); /* Sombra */
+}
+
+.modal-content .offer-button:hover {
+    background-color: #7b1fa2;
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(98, 0, 234, 0.7); /* Sombra ao passar o mouse */
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #aaa;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-content .close:hover {
+    color: #6200ea;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .modal-content {
+        max-width: 90%; /* Ajusta o tamanho para telas menores */
+    }
+    .modal-content .offer-button {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+    .modal-content .close {
+        top: 5px;
+        right: 10px;
+        font-size: 20px;
+    }
+}
+
 
 .modal-content {
     background-color: #ffffff; /* Fundo claro */
